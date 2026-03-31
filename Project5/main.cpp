@@ -115,7 +115,7 @@ int main() {
 
         FlushBatchDraw();
         count++;
-        Sleep(16);
+        Sleep(10);
     }
     closegraph();
     return 0;

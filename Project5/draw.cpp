@@ -93,7 +93,7 @@ void DrawStartScreen(int scrW, int scrH, int isLoggedIn, int inloginbutton, int 
 }
 
 void DrawGame(const struct circle* p, int canFly) {
-    cleardevice();
+    
 
     // --- 绘制能量条 ---
     double energyRatio = p->energy / p->maxenergy;

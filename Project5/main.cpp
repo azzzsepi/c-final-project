@@ -39,6 +39,7 @@ int main() {
 
     while (1) {
         //开始界面
+        cleardevice();
         if (!gameStarted && !logging) {
 
             int btnWid = 220;
@@ -89,12 +90,13 @@ int main() {
             drawlogininterface();
         }
         else {//游戏开始
-            if (count >= 240) {
+            if (count >= 120) {
                 count = 0;
                 append_linknode(head, 960);
 
             }
             move_all_nodes(head);
+            delete_first_node_if(head);
 
             // 输入
             while (peekmessage(&msg, EX_KEY)) {
@@ -109,8 +111,10 @@ int main() {
             UpdateEnvironment(&player1, &cfg, isSpacePressed, &canFly);
 
             // 视图层 (Render)
-            DrawGame(&player1, canFly);
             DrawLinkList(head, 80);
+            DrawGame(&player1, canFly);
+            
+            
         }
 
         FlushBatchDraw();
